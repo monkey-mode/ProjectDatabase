@@ -32,28 +32,29 @@ namespace ProjectDatabase
             get { return mainPanel; }
             set { mainPanel = value; }
         }
-
+        public Button BackBtn
+        {
+            get { return Back; }
+            set { Back = value; }
+        }
 
         public Main()
         {
             InitializeComponent();
         }
 
-        private void Back_Click(object sender, EventArgs e)
-        {
-            mainControl.showControl(new ScheduleControl(), mainPanel);
-        }
-
         private void Main_Load(object sender, EventArgs e)
         {
             Back.Visible = false;
             obj = this;
+
             mainControl.showControl(new ScheduleControl(), mainPanel);
         }
 
-        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        private void Back_Click(object sender, EventArgs e)
         {
-
+            mainPanel.Controls["ScheduleControl"].BringToFront();
+            Back.Visible = false;
         }
     }
 }

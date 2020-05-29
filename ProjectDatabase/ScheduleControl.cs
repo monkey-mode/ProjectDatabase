@@ -19,7 +19,14 @@ namespace ProjectDatabase
 
         private void SearchFlights_Click(object sender, EventArgs e)
         {
-            mainControl.showControl(new BookingControl(), nextPage);
+            if (!Main.Instance.Pnl.Controls.ContainsKey("BookingControl"))
+            {
+                BookingControl bk = new BookingControl();
+                bk.Dock = DockStyle.Fill;
+                Main.Instance.Pnl.Controls.Add(bk);
+            }
+            Main.Instance.Pnl.Controls["BookingControl"].BringToFront();
+            Main.Instance.BackBtn.Visible = true;
         }
         private void checkReturn(object sender, EventArgs e)
         {
