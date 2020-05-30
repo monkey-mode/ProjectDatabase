@@ -36,15 +36,11 @@ namespace ProjectDatabase
                 returnDate.Visible = true;
         }
 
-        private void nextPage_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void ScheduleControl_Load(object sender, EventArgs e)
         {
             fromBox.SelectedIndex = 0;
             toBox.SelectedIndex = 1;
+            seatCombo.SelectedIndex = 0;
         }
 
         private void swap_Click(object sender, EventArgs e)
