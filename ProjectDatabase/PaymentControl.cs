@@ -16,7 +16,6 @@ namespace ProjectDatabase
         {
             InitializeComponent();
         }
-
         private void PaymentControl_Load(object sender, EventArgs e)
         {
 

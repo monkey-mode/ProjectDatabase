@@ -54,7 +54,7 @@ namespace ProjectDatabase
 
         private void Back_Click(object sender, EventArgs e)
         {
-            mainPanel.Controls["ScheduleControl"].BringToFront();
+            mainPanel.Controls["BookingControl"].BringToFront();
             Back.Visible = false;
         }
     }
