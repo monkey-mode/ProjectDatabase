@@ -421,7 +421,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker returnDate;
         private System.Windows.Forms.CheckBox returnCheck;
-        private System.Windows.Forms.ComboBox toBox;
         private System.Windows.Forms.Button SearchFlights;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox seatCombo;
@@ -429,7 +428,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker DepatureDate;
-        private System.Windows.Forms.ComboBox fromBox;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -437,5 +435,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.ComboBox toBox;
+        public System.Windows.Forms.ComboBox fromBox;
     }
 }

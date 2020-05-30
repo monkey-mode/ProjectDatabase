@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.ChBtn = new System.Windows.Forms.Button();
@@ -42,21 +41,24 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BookingGrid = new System.Windows.Forms.DataGridView();
+            this.fromToLabel = new System.Windows.Forms.Label();
+            this.fromSmall = new System.Windows.Forms.Label();
+            this.toSmall = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BookingGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.toSmall);
+            this.panel1.Controls.Add(this.fromSmall);
+            this.panel1.Controls.Add(this.fromToLabel);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.ChBtn);
@@ -69,8 +71,6 @@
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox1);
@@ -78,14 +78,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(966, 222);
             this.panel1.TabIndex = 4;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("SF Pro Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(33, 17);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(412, 36);
-            this.textBox8.TabIndex = 46;
             // 
             // label8
             // 
@@ -204,22 +196,6 @@
             this.label3.TabIndex = 34;
             this.label3.Text = "Arrive in";
             // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("SF Pro Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(451, 124);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(133, 21);
-            this.textBox4.TabIndex = 33;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("SF Pro Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(270, 124);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(133, 21);
-            this.textBox5.TabIndex = 32;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -248,30 +224,55 @@
             this.textBox1.Size = new System.Drawing.Size(206, 27);
             this.textBox1.TabIndex = 12;
             // 
-            // dataGridView1
+            // BookingGrid
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 228);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(966, 355);
-            this.dataGridView1.TabIndex = 3;
+            this.BookingGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.BookingGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.BookingGrid.Location = new System.Drawing.Point(0, 228);
+            this.BookingGrid.Name = "BookingGrid";
+            this.BookingGrid.Size = new System.Drawing.Size(966, 355);
+            this.BookingGrid.TabIndex = 3;
+            // 
+            // fromToLabel
+            // 
+            this.fromToLabel.AutoSize = true;
+            this.fromToLabel.Font = new System.Drawing.Font("SF Pro Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fromToLabel.Location = new System.Drawing.Point(28, 18);
+            this.fromToLabel.Name = "fromToLabel";
+            this.fromToLabel.Size = new System.Drawing.Size(0, 25);
+            this.fromToLabel.TabIndex = 46;
+            // 
+            // fromSmall
+            // 
+            this.fromSmall.AutoSize = true;
+            this.fromSmall.Font = new System.Drawing.Font("SF Pro Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fromSmall.Location = new System.Drawing.Point(267, 124);
+            this.fromSmall.Name = "fromSmall";
+            this.fromSmall.Size = new System.Drawing.Size(0, 14);
+            this.fromSmall.TabIndex = 47;
+            // 
+            // toSmall
+            // 
+            this.toSmall.AutoSize = true;
+            this.toSmall.Font = new System.Drawing.Font("SF Pro Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toSmall.Location = new System.Drawing.Point(448, 124);
+            this.toSmall.Name = "toSmall";
+            this.toSmall.Size = new System.Drawing.Size(0, 14);
+            this.toSmall.TabIndex = 48;
             // 
             // BookingControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.BookingGrid);
             this.Controls.Add(this.panel1);
             this.Name = "BookingControl";
             this.Size = new System.Drawing.Size(966, 583);
             this.Load += new System.EventHandler(this.BookingControl_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BookingGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,7 +280,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button ChBtn;
@@ -292,11 +292,12 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        protected System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView BookingGrid;
+        private System.Windows.Forms.Label fromToLabel;
+        private System.Windows.Forms.Label toSmall;
+        private System.Windows.Forms.Label fromSmall;
     }
 }

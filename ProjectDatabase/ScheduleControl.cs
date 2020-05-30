@@ -16,12 +16,15 @@ namespace ProjectDatabase
         {
             InitializeComponent();
         }
+        public void sendString()
+        {
 
+        }
         private void SearchFlights_Click(object sender, EventArgs e)
         {
             if (!Main.Instance.Pnl.Controls.ContainsKey("BookingControl"))
             {
-                BookingControl bk = new BookingControl();
+                BookingControl bk = new BookingControl(fromBox.Text,toBox.Text);
                 bk.Dock = DockStyle.Fill;
                 Main.Instance.Pnl.Controls.Add(bk);
             }

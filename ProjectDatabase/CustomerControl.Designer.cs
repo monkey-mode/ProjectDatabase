@@ -54,6 +54,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.Controls.Add(this.ConBtn);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.dateTimePicker1);
