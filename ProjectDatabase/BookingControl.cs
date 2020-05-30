@@ -19,7 +19,14 @@ namespace ProjectDatabase
 
         private void ChBtn_Click(object sender, EventArgs e)
         {
-            mainControl.showControl(new CustomerControl(), nextPage);
+            if (!Main.Instance.Pnl.Controls.ContainsKey("CustomerControl"))
+            {
+                CustomerControl cus = new CustomerControl();
+                cus.Dock = DockStyle.Fill;
+                Main.Instance.Pnl.Controls.Add(cus);
+            }
+            Main.Instance.Pnl.Controls["CustomerControl"].BringToFront();
+            Main.Instance.BackBtn.Visible = true;
         }
 
         private void BookingControl_Load(object sender, EventArgs e)

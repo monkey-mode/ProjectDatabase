@@ -13,9 +13,9 @@ namespace ProjectDatabase
         {
             mainPanel.Controls.Clear();
             control.Dock = DockStyle.Fill;
-            //control.BringToFront();
+            control.BringToFront();
             mainPanel.BringToFront();
-            //control.Focus();
+            control.Focus();
             mainPanel.Controls.Add(control);
         }
     }

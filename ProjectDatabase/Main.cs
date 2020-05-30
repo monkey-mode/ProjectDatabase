@@ -47,8 +47,9 @@ namespace ProjectDatabase
         {
             Back.Visible = false;
             obj = this;
-
-            mainControl.showControl(new ScheduleControl(), mainPanel);
+            ScheduleControl sch = new ScheduleControl();
+            sch.Dock = DockStyle.Fill;
+            mainPanel.Controls.Add(sch);
         }
 
         private void Back_Click(object sender, EventArgs e)

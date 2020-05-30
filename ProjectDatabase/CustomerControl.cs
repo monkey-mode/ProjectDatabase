@@ -19,7 +19,14 @@ namespace ProjectDatabase
 
         private void ConBtn_Click(object sender, EventArgs e)
         {
-            mainControl.showControl(new PaymentControl(), nextPage);
+            if (!Main.Instance.Pnl.Controls.ContainsKey("PaymentControl"))
+            {
+                PaymentControl pay = new PaymentControl();
+                pay.Dock = DockStyle.Fill;
+                Main.Instance.Pnl.Controls.Add(pay);
+            }
+            Main.Instance.Pnl.Controls["PaymentControl"].BringToFront();
+            Main.Instance.BackBtn.Visible = true;
         }
     }
 }
