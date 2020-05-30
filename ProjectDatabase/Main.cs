@@ -50,12 +50,44 @@ namespace ProjectDatabase
             ScheduleControl sch = new ScheduleControl();
             sch.Dock = DockStyle.Fill;
             mainPanel.Controls.Add(sch);
+
+            /*BookingControl bk = new BookingControl();
+            bk.Dock = DockStyle.Fill;
+            mainPanel.Controls.Add(bk);
+
+            CustomerControl cus = new CustomerControl();
+            cus.Dock = DockStyle.Fill;
+            mainPanel.Controls.Add(cus);
+
+            PaymentControl pay = new PaymentControl();
+            pay.Dock = DockStyle.Fill;
+            mainPanel.Controls.Add(pay);*/
+
+            mainPanel.Controls["ScheduleControl"].BringToFront();
         }
 
         private void Back_Click(object sender, EventArgs e)
         {
-            mainPanel.Controls["BookingControl"].BringToFront();
-            Back.Visible = false;
+            if (mainPanel.Controls.Count == 2) 
+            {
+                mainPanel.Controls["ScheduleControl"].BringToFront();
+                mainPanel.Controls.RemoveAt(1);
+                Back.Visible = false;
+            }
+                
+            else if (mainPanel.Controls.Count == 3)
+            {
+                mainPanel.Controls["BookingControl"].BringToFront();
+                mainPanel.Controls.RemoveAt(1);
+                Back.Visible = true;
+            }
+            else if (mainPanel.Controls.Count == 4)
+            {
+                mainPanel.Controls["CustomerControl"].BringToFront();
+                mainPanel.Controls.RemoveAt(1);
+                Back.Visible = true;
+            }
+
         }
     }
 }

@@ -48,7 +48,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nextPage = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -260,14 +259,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(966, 355);
             this.dataGridView1.TabIndex = 3;
             // 
-            // nextPage
-            // 
-            this.nextPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nextPage.Location = new System.Drawing.Point(0, 0);
-            this.nextPage.Name = "nextPage";
-            this.nextPage.Size = new System.Drawing.Size(966, 583);
-            this.nextPage.TabIndex = 5;
-            // 
             // BookingControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,7 +266,6 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.nextPage);
             this.Name = "BookingControl";
             this.Size = new System.Drawing.Size(966, 583);
             this.Load += new System.EventHandler(this.BookingControl_Load);
@@ -308,6 +298,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel nextPage;
     }
 }
