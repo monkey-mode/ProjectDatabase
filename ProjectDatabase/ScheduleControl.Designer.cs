@@ -317,9 +317,9 @@
             this.seatCombo.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seatCombo.FormattingEnabled = true;
             this.seatCombo.Items.AddRange(new object[] {
-            "Economy",
-            "Business",
-            "First Class"});
+            "Business class",
+            "First class",
+            "Economy class"});
             this.seatCombo.Location = new System.Drawing.Point(647, 171);
             this.seatCombo.Name = "seatCombo";
             this.seatCombo.Size = new System.Drawing.Size(318, 27);

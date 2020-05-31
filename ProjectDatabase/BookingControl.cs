@@ -15,12 +15,13 @@ namespace ProjectDatabase
     {
         MySqlConnection con = new MySqlConnection("host=localhost;user=root;password=;database=projectdatabase");
         MySqlCommand comm;
-        public BookingControl(string from,string to)
+        public BookingControl(string from,string to,string rid)
         {
             InitializeComponent();
             fromToLabel.Text = from + " - " +to;
             fromSmall.Text = from;
             toSmall.Text = to;
+
         }
 
         private void ChBtn_Click(object sender, EventArgs e)
@@ -37,7 +38,7 @@ namespace ProjectDatabase
         private void open_connection()
         {
             con.Open();
-            MessageBox.Show($"MySQL version : {con.ServerVersion}");
+            //MessageBox.Show($"MySQL version : {con.ServerVersion}");
         }
         private void loadBookingGridData()
         {
