@@ -28,23 +28,32 @@ namespace ProjectDatabase
         }
         private void SearchFlights_Click(object sender, EventArgs e)
         {
-            string sql = "select seat_id from seat inner join seattype on seat.seattype_id = seattype.seattype_id and seattype.seattype_name = \"" + seatCombo.Text + "\" and seat.status = 'free' LIMIT 1;";
+            string sql = "select cost from seat inner join seattype on seat.seattype_id = seattype.seattype_id and seattype.seattype_name = \"" + seatCombo.Text + "\" and seat.status = 'free' LIMIT 1;";
             comm = new MySqlCommand(sql, con);
-            int num = (int)comm.ExecuteScalar();
+            var cost = comm.ExecuteScalar();
 
-            comm = con.CreateCommand();
-            comm.CommandText = "INSERT INTO projectdatabase.booking (bid, bdate, seat_id, airplane_id, sid) VALUES (@bid, @bdate,"+ num +",@airplane_id,@sid);";
+            var sel = fromBox.SelectedIndex.ToString() + toBox.SelectedIndex.ToString();
+            var rid = 0;
+            if (sel == "01")
+            {
+                rid = 1;
+            }
+            else
+                rid = 2;
+            string DDate = DepatureDate.Value.ToString("yyyy-MM-dd");
+
+            /*comm = con.CreateCommand();
+            comm.CommandText = "INSERT INTO projectdatabase.booking (bid, bdate, seat_id, airplane_id, sid) VALUES (@bid, @bdate,@seat_id,@airplane_id,@sid);";
             comm.Parameters.AddWithValue("@bid",null);
             comm.Parameters.AddWithValue("@bdate", DateTime.Now.ToString("yyyy-MM-dd  HH-mm-ss"));
-            /*int num = selectSeatId();
-            comm.Parameters.AddWithValue("@seat_id", num);*/
+            comm.Parameters.AddWithValue("@seat_id", num);
             comm.Parameters.AddWithValue("@airplane_id",1);
             comm.Parameters.AddWithValue("@sid", 1);
-            comm.ExecuteNonQuery();
-            comm.Dispose();
+            comm.ExecuteNonQuery();*/
+
             if (!Main.Instance.Pnl.Controls.ContainsKey("BookingControl"))
             {
-                BookingControl bk = new BookingControl(fromBox.Text,toBox.Text,fromBox.SelectedIndex.ToString() + toBox.SelectedIndex.ToString());
+                BookingControl bk = new BookingControl(fromBox.Text,toBox.Text,cost.ToString(),rid,DDate);
                 bk.Dock = DockStyle.Fill;
                 Main.Instance.Pnl.Controls.Add(bk);
             } 

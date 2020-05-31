@@ -51,18 +51,6 @@ namespace ProjectDatabase
             sch.Dock = DockStyle.Fill;
             mainPanel.Controls.Add(sch);
 
-            /*BookingControl bk = new BookingControl();
-            bk.Dock = DockStyle.Fill;
-            mainPanel.Controls.Add(bk);
-
-            CustomerControl cus = new CustomerControl();
-            cus.Dock = DockStyle.Fill;
-            mainPanel.Controls.Add(cus);
-
-            PaymentControl pay = new PaymentControl();
-            pay.Dock = DockStyle.Fill;
-            mainPanel.Controls.Add(pay);*/
-
             mainPanel.Controls["ScheduleControl"].BringToFront();
         }
 

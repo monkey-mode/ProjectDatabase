@@ -28,23 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TotalTime = new System.Windows.Forms.Label();
+            this.ArriveTime = new System.Windows.Forms.Label();
+            this.DepartTime = new System.Windows.Forms.Label();
+            this.Acompany = new System.Windows.Forms.Label();
             this.toSmall = new System.Windows.Forms.Label();
             this.fromSmall = new System.Windows.Forms.Label();
             this.fromToLabel = new System.Windows.Forms.Label();
             this.ChBtn = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.price = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.BookingGrid = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BookingGrid)).BeginInit();
@@ -54,26 +56,65 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.TotalTime);
+            this.panel1.Controls.Add(this.ArriveTime);
+            this.panel1.Controls.Add(this.DepartTime);
+            this.panel1.Controls.Add(this.Acompany);
             this.panel1.Controls.Add(this.toSmall);
             this.panel1.Controls.Add(this.fromSmall);
             this.panel1.Controls.Add(this.fromToLabel);
             this.panel1.Controls.Add(this.ChBtn);
-            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.price);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(966, 206);
             this.panel1.TabIndex = 4;
+            // 
+            // TotalTime
+            // 
+            this.TotalTime.AutoSize = true;
+            this.TotalTime.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalTime.Location = new System.Drawing.Point(602, 100);
+            this.TotalTime.Name = "TotalTime";
+            this.TotalTime.Size = new System.Drawing.Size(87, 19);
+            this.TotalTime.TabIndex = 52;
+            this.TotalTime.Text = "00:00:00";
+            // 
+            // ArriveTime
+            // 
+            this.ArriveTime.AutoSize = true;
+            this.ArriveTime.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ArriveTime.Location = new System.Drawing.Point(447, 100);
+            this.ArriveTime.Name = "ArriveTime";
+            this.ArriveTime.Size = new System.Drawing.Size(87, 19);
+            this.ArriveTime.TabIndex = 51;
+            this.ArriveTime.Text = "00:00:00";
+            // 
+            // DepartTime
+            // 
+            this.DepartTime.AutoSize = true;
+            this.DepartTime.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DepartTime.Location = new System.Drawing.Point(266, 100);
+            this.DepartTime.Name = "DepartTime";
+            this.DepartTime.Size = new System.Drawing.Size(87, 19);
+            this.DepartTime.TabIndex = 50;
+            this.DepartTime.Text = "00:00:00";
+            // 
+            // Acompany
+            // 
+            this.Acompany.AutoSize = true;
+            this.Acompany.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Acompany.Location = new System.Drawing.Point(29, 100);
+            this.Acompany.Name = "Acompany";
+            this.Acompany.Size = new System.Drawing.Size(94, 19);
+            this.Acompany.TabIndex = 49;
+            this.Acompany.Text = "Acompany";
             // 
             // toSmall
             // 
@@ -115,15 +156,14 @@
             this.ChBtn.UseVisualStyleBackColor = false;
             this.ChBtn.Click += new System.EventHandler(this.ChBtn_Click);
             // 
-            // label7
+            // price
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(897, 97);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(30, 19);
-            this.label7.TabIndex = 42;
-            this.label7.Text = "/ $";
+            this.price.AutoSize = true;
+            this.price.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.price.Location = new System.Drawing.Point(779, 97);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(0, 19);
+            this.price.TabIndex = 42;
             // 
             // label6
             // 
@@ -135,14 +175,6 @@
             this.label6.TabIndex = 41;
             this.label6.Text = "Price";
             // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(774, 94);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(117, 27);
-            this.textBox3.TabIndex = 40;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -152,34 +184,6 @@
             this.label5.Size = new System.Drawing.Size(95, 19);
             this.label5.TabIndex = 39;
             this.label5.Text = "Total Time";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(606, 94);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(142, 27);
-            this.textBox2.TabIndex = 38;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "ddd dd MMM yyyy";
-            this.dateTimePicker2.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(451, 94);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(133, 27);
-            this.dateTimePicker2.TabIndex = 37;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "ddd dd MMM yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(270, 94);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(133, 27);
-            this.dateTimePicker1.TabIndex = 36;
             // 
             // label4
             // 
@@ -205,7 +209,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(409, 97);
+            this.label1.Location = new System.Drawing.Point(381, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 19);
             this.label1.TabIndex = 26;
@@ -221,22 +225,34 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Airplane Company";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(33, 94);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 27);
-            this.textBox1.TabIndex = 12;
-            // 
             // BookingGrid
             // 
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.DodgerBlue;
+            this.BookingGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.BookingGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.BookingGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BookingGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.BookingGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("SF Pro Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BookingGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.BookingGrid.Location = new System.Drawing.Point(0, 203);
             this.BookingGrid.Name = "BookingGrid";
             this.BookingGrid.Size = new System.Drawing.Size(966, 380);
             this.BookingGrid.TabIndex = 3;
+            this.BookingGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BookingCellClick);
             // 
             // BookingControl
             // 
@@ -259,21 +275,20 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button ChBtn;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label price;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView BookingGrid;
         private System.Windows.Forms.Label fromToLabel;
         private System.Windows.Forms.Label toSmall;
         private System.Windows.Forms.Label fromSmall;
+        private System.Windows.Forms.Label TotalTime;
+        private System.Windows.Forms.Label ArriveTime;
+        private System.Windows.Forms.Label DepartTime;
+        private System.Windows.Forms.Label Acompany;
     }
 }
