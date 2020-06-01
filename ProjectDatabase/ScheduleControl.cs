@@ -41,6 +41,7 @@ namespace ProjectDatabase
             else
                 rid = 2;
             string DDate = DepatureDate.Value.ToString("yyyy-MM-dd");
+            string RDate = returnDate.Value.ToString("yyyy-MM-dd");
 
             /*comm = con.CreateCommand();
             comm.CommandText = "INSERT INTO projectdatabase.booking (bid, bdate, seat_id, airplane_id, sid) VALUES (@bid, @bdate,@seat_id,@airplane_id,@sid);";
@@ -53,7 +54,7 @@ namespace ProjectDatabase
 
             if (!Main.Instance.Pnl.Controls.ContainsKey("BookingControl"))
             {
-                BookingControl bk = new BookingControl(fromBox.Text,toBox.Text,cost.ToString(),rid,DDate);
+                BookingControl bk = new BookingControl(fromBox.Text,toBox.Text,cost.ToString(),rid,DDate,RDate,returnCheck.Checked);
                 bk.Dock = DockStyle.Fill;
                 Main.Instance.Pnl.Controls.Add(bk);
             } 
