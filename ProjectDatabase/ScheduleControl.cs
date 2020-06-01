@@ -31,7 +31,6 @@ namespace ProjectDatabase
             string sql = "select cost from seat inner join seattype on seat.seattype_id = seattype.seattype_id and seattype.seattype_name = \"" + seatCombo.Text + "\" and seat.status = 'free' LIMIT 1;";
             comm = new MySqlCommand(sql, con);
             var cost = comm.ExecuteScalar();
-
             var sel = fromBox.SelectedIndex.ToString() + toBox.SelectedIndex.ToString();
             var rid = 0;
             if (sel == "01")
@@ -54,7 +53,7 @@ namespace ProjectDatabase
 
             if (!Main.Instance.Pnl.Controls.ContainsKey("BookingControl"))
             {
-                BookingControl bk = new BookingControl(fromBox.Text,toBox.Text,cost.ToString(),rid,DDate,RDate,returnCheck.Checked);
+                BookingControl bk = new BookingControl(fromBox.Text,toBox.Text,cost.ToString(),rid,DDate,RDate,returnCheck.Checked,seatCombo.Text);
                 bk.Dock = DockStyle.Fill;
                 Main.Instance.Pnl.Controls.Add(bk);
             } 

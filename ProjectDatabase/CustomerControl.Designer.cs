@@ -46,9 +46,8 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Bnum = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.nextPage = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +71,7 @@
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.Bnum);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -252,19 +251,19 @@
             this.textBox2.Size = new System.Drawing.Size(330, 27);
             this.textBox2.TabIndex = 33;
             // 
-            // comboBox1
+            // Bnum
             // 
-            this.comboBox1.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.Bnum.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bnum.FormattingEnabled = true;
+            this.Bnum.Items.AddRange(new object[] {
             "+66",
             "+65",
             "+64",
             "+63"});
-            this.comboBox1.Location = new System.Drawing.Point(28, 209);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(59, 27);
-            this.comboBox1.TabIndex = 32;
+            this.Bnum.Location = new System.Drawing.Point(28, 209);
+            this.Bnum.Name = "Bnum";
+            this.Bnum.Size = new System.Drawing.Size(59, 27);
+            this.Bnum.TabIndex = 32;
             // 
             // textBox1
             // 
@@ -274,23 +273,15 @@
             this.textBox1.Size = new System.Drawing.Size(330, 27);
             this.textBox1.TabIndex = 31;
             // 
-            // nextPage
-            // 
-            this.nextPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nextPage.Location = new System.Drawing.Point(0, 0);
-            this.nextPage.Name = "nextPage";
-            this.nextPage.Size = new System.Drawing.Size(776, 388);
-            this.nextPage.TabIndex = 1;
-            // 
             // CustomerControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.nextPage);
             this.Name = "CustomerControl";
             this.Size = new System.Drawing.Size(776, 388);
+            this.Load += new System.EventHandler(this.CustomerControl_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -317,8 +308,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox Bnum;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel nextPage;
     }
 }

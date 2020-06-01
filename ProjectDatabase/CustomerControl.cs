@@ -28,5 +28,10 @@ namespace ProjectDatabase
             Main.Instance.Pnl.Controls["PaymentControl"].BringToFront();
             Main.Instance.BackBtn.Visible = true;
         }
+
+        private void CustomerControl_Load(object sender, EventArgs e)
+        {
+            Bnum.SelectedIndex = 0;
+        }
     }
 }

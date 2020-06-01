@@ -19,7 +19,8 @@ namespace ProjectDatabase
         string DDate;
         string RDate;
         bool rcheck;
-        public BookingControl(string from,string to,string cost,int rid,string DDate,string RDate,bool rcheck)
+        string stype;
+        public BookingControl(string from,string to,string cost,int rid,string DDate,string RDate,bool rcheck,string stype)
         {
             
             InitializeComponent();
@@ -43,7 +44,7 @@ namespace ProjectDatabase
                 BookPanel2.Visible = false;
             }
             BookPanel1.BringToFront();
-
+            this.stype = stype;
         }
 
         private void ChBtn_Click(object sender, EventArgs e)
@@ -72,9 +73,11 @@ namespace ProjectDatabase
         }
         private void loadBookingGridData()
         {
-            string sql = "select  airplane.acompany, airplane.take_of_time, airplane.landing_time, airplane.totalTime, schedule.sdate, route.take_of_place, route.landing_place " +
-                         "from airplane inner join schedule inner join route "+
-                         "on schedule.sid = airplane.sid and schedule.rid = route.rid and sdate = '"+DDate + "' and route.rid ="+ rid +"; ";
+            string sql = "SELECT airplane.acompany, airplane.take_of_time, airplane.landing_time, airplane.totalTime, schedule.sdate, route.take_of_place, route.landing_place " +
+                         "from booking inner join airplane inner join schedule inner join seat inner join route inner join seattype " +
+                         "on booking.airplane_id = airplane.airplane_id and booking.seat_id = seat.seat_id and " +
+                         "seat.seattype_id = seattype.seattype_id and seattype.seattype_name ='" + stype + "' and seat.status = 'free' and " +
+                         "booking.sid = schedule.sid and schedule.rid = route.rid and route.rid = " + rid + " and schedule.sdate = '" + DDate + "'; ";
             comm = new MySqlCommand(sql, con);
             DataSet ds = new DataSet();
             MySqlDataAdapter da = new MySqlDataAdapter(comm);
@@ -87,7 +90,8 @@ namespace ProjectDatabase
             BookingGrid.Columns[4].HeaderText = "Date";
             BookingGrid.Columns[5].HeaderText = "Depart\nPlace";
             BookingGrid.Columns[6].HeaderText = "Arrive In\nPlace";
-            
+
+
             BookingGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             BookingGrid.AutoResizeColumns();
 
@@ -95,9 +99,11 @@ namespace ProjectDatabase
 
         private void loadBookingGridData2()
         {
-            string sql = "select  airplane.acompany, airplane.take_of_time, airplane.landing_time, airplane.totalTime, schedule.sdate, route.take_of_place, route.landing_place " +
-                         "from airplane inner join schedule inner join route " +
-                         "on schedule.sid = airplane.sid and schedule.rid = route.rid and sdate = '" + RDate + "' and route.rid !=" + rid + "; ";
+            string sql = "SELECT airplane.acompany, airplane.take_of_time, airplane.landing_time, airplane.totalTime, schedule.sdate, route.take_of_place, route.landing_place " +
+                         "from booking inner join airplane inner join schedule inner join seat inner join route inner join seattype " +
+                         "on booking.airplane_id = airplane.airplane_id and booking.seat_id = seat.seat_id and "+
+                         "seat.seattype_id = seattype.seattype_id and seattype.seattype_name ='"+ stype+ "' and seat.status = '"+stype+"' and " +
+                         "booking.sid = schedule.sid and schedule.rid = route.rid and route.rid != " + rid + " and schedule.sdate = '" + RDate + "'; ";
             comm = new MySqlCommand(sql, con);
             DataSet ds = new DataSet();
             MySqlDataAdapter da = new MySqlDataAdapter(comm);
@@ -124,6 +130,7 @@ namespace ProjectDatabase
 
         private void BookingCellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (BookingGrid.SelectedRows.Count > 0) // make sure user select at least 1 row 
             {
                 string acompany = "";
@@ -141,6 +148,7 @@ namespace ProjectDatabase
                 {
                     MessageBox.Show(ex.Message);
                 }
+                
 
                 Acompany.Text = acompany;
                 DepartTime.Text = depart;
