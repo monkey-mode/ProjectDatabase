@@ -15,12 +15,14 @@ namespace ProjectDatabase
         bool rcheck;
         string bids1;
         string bids2;
-        public CustomerControl(bool rcheck,string bids1,string bids2)
+        string cost;
+        public CustomerControl(bool rcheck,string bids1,string bids2,string cost)
         {
             InitializeComponent();
             this.rcheck = rcheck;
             this.bids1 = bids1;
             this.bids2 = bids2;
+            this.cost = cost;
         }
 
         private void ConBtn_Click(object sender, EventArgs e)
@@ -35,7 +37,7 @@ namespace ProjectDatabase
             {
                 if (!Main.Instance.Pnl.Controls.ContainsKey("PaymentControl"))
                 {
-                    PaymentControl pay = new PaymentControl(sqlinsertcus, rcheck, bids1, bids2, comboBox1.Text + name + " " + lastname);
+                    PaymentControl pay = new PaymentControl(sqlinsertcus, rcheck, bids1, bids2, comboBox1.Text + name + " " + lastname,cost);
                     pay.Dock = DockStyle.Fill;
                     Main.Instance.Pnl.Controls.Add(pay);
                 }
@@ -66,6 +68,7 @@ namespace ProjectDatabase
         {
             comboBox1.SelectedIndex = 0;
             Bnum.SelectedIndex = 0;
+            
         }
     }
 }

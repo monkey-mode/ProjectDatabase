@@ -70,7 +70,7 @@ namespace ProjectDatabase
             {
                 if (!Main.Instance.Pnl.Controls.ContainsKey("CustomerControl"))
                 {
-                    CustomerControl cus = new CustomerControl(rcheckreal,departinfo,returninfo);
+                    CustomerControl cus = new CustomerControl(rcheckreal,departinfo,returninfo,cost);
                     cus.Dock = DockStyle.Fill;
                     Main.Instance.Pnl.Controls.Add(cus);
                 }

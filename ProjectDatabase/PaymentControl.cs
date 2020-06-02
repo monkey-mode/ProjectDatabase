@@ -20,8 +20,8 @@ namespace ProjectDatabase
         string[] departinfo;
         string[] returninfo;
         string cname;
-
-        public PaymentControl(string sqlinsertcus, bool rcheck, string departinfo, string returninfo,string cname)
+        string cost;
+        public PaymentControl(string sqlinsertcus, bool rcheck, string departinfo, string returninfo,string cname,string cost)
         {
             InitializeComponent();
             this.sqlinsertcus = sqlinsertcus;
@@ -31,9 +31,24 @@ namespace ProjectDatabase
             this.cname = cname;
             this.rcheck = rcheck;
             labelname.Text = cname;
+            this.cost = cost;
         }
         private void PaymentControl_Load(object sender, EventArgs e)
         {
+            int sum = int.Parse(cost);
+            nametic2.Visible = false;
+            money1.Text = "THB  " + cost;
+            if (rcheck)
+            {
+                nametic2.Visible = true;
+                money2.Text = "THB  " + cost;
+                sum += int.Parse(cost);
+            }
+            fee.Text = "THB  " + sum * 0.01;
+            label17.Text = "THB  " + (sum + sum * 0.01);
+            credit.BringToFront();
+            crebtn.BackColor = Color.White;
+            crebtn.ForeColor = Color.Black;
             bid1.Text = departinfo[0];
             acom1.Text = departinfo[1];
             date1.Text = departinfo[5];
@@ -57,7 +72,33 @@ namespace ProjectDatabase
                 TotalTime2.Text = returninfo[4];
                 fromSmall2.Text = returninfo[6];
                 toSmall2.Text = returninfo[7];
+
             }
+            nameTic.Text = acom1.Text;
+            if (rcheck)
+            {
+                nametic2.Text = acom2.Text;
+            }
+        }
+
+        private void crebtn_Click(object sender, EventArgs e)
+        {
+            credit.BringToFront();
+            crebtn.BackColor = Color.White;
+            crebtn.ForeColor = Color.Black;
+
+            elebtn.BackColor = Color.FromArgb(255, 128, 0);
+            elebtn.ForeColor = Color.White;
+        }
+
+        private void elebtn_Click(object sender, EventArgs e)
+        {
+            eleven.BringToFront();
+            elebtn.BackColor = Color.White;
+            elebtn.ForeColor = Color.Black;
+
+            crebtn.BackColor = Color.FromArgb(255, 128, 0);
+            crebtn.ForeColor = Color.White;
         }
     }
 }

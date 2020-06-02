@@ -67,8 +67,9 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.main = new System.Windows.Forms.Panel();
+            this.menu = new System.Windows.Forms.Panel();
+            this.credit = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -80,19 +81,39 @@
             this.label11 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.crebtn = new System.Windows.Forms.Button();
+            this.elebtn = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.nameTic = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.eleven = new System.Windows.Forms.Panel();
+            this.fee = new System.Windows.Forms.Label();
+            this.money1 = new System.Windows.Forms.Label();
+            this.money2 = new System.Windows.Forms.Label();
+            this.nametic2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.main.SuspendLayout();
+            this.menu.SuspendLayout();
+            this.credit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.menu);
+            this.panel1.Controls.Add(this.main);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.labelname);
             this.panel1.Controls.Add(this.TotalTime1);
@@ -113,7 +134,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(0, 3);
+            this.panel1.Location = new System.Drawing.Point(8, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(970, 887);
             this.panel1.TabIndex = 1;
@@ -217,9 +238,8 @@
             this.acom1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.acom1.Location = new System.Drawing.Point(593, 134);
             this.acom1.Name = "acom1";
-            this.acom1.Size = new System.Drawing.Size(80, 19);
+            this.acom1.Size = new System.Drawing.Size(0, 19);
             this.acom1.TabIndex = 86;
-            this.acom1.Text = "Company";
             // 
             // ArriveTime1
             // 
@@ -436,9 +456,8 @@
             this.bid2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.bid2.Location = new System.Drawing.Point(32, 84);
             this.bid2.Name = "bid2";
-            this.bid2.Size = new System.Drawing.Size(80, 19);
+            this.bid2.Size = new System.Drawing.Size(0, 19);
             this.bid2.TabIndex = 102;
-            this.bid2.Text = "Company";
             // 
             // label27
             // 
@@ -521,144 +540,357 @@
             this.label34.TabIndex = 112;
             this.label34.Text = "Return Flight";
             // 
-            // panel3
+            // main
             // 
-            this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.textBox10);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.textBox9);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.textBox8);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.textBox7);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(132, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(437, 887);
-            this.panel3.TabIndex = 97;
+            this.main.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.main.Controls.Add(this.credit);
+            this.main.Controls.Add(this.eleven);
+            this.main.Location = new System.Drawing.Point(132, 3);
+            this.main.Name = "main";
+            this.main.Size = new System.Drawing.Size(437, 887);
+            this.main.TabIndex = 97;
             // 
-            // dataGridView1
+            // menu
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 300);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(360, 34);
-            this.dataGridView1.TabIndex = 64;
+            this.menu.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.menu.BackColor = System.Drawing.Color.DodgerBlue;
+            this.menu.Controls.Add(this.pictureBox1);
+            this.menu.Controls.Add(this.elebtn);
+            this.menu.Controls.Add(this.crebtn);
+            this.menu.Controls.Add(this.label16);
+            this.menu.Location = new System.Drawing.Point(0, 0);
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(135, 887);
+            this.menu.TabIndex = 98;
+            // 
+            // credit
+            // 
+            this.credit.Controls.Add(this.pictureBox4);
+            this.credit.Controls.Add(this.pictureBox3);
+            this.credit.Controls.Add(this.pictureBox2);
+            this.credit.Controls.Add(this.nametic2);
+            this.credit.Controls.Add(this.money2);
+            this.credit.Controls.Add(this.money1);
+            this.credit.Controls.Add(this.fee);
+            this.credit.Controls.Add(this.label21);
+            this.credit.Controls.Add(this.nameTic);
+            this.credit.Controls.Add(this.label18);
+            this.credit.Controls.Add(this.label17);
+            this.credit.Controls.Add(this.label15);
+            this.credit.Controls.Add(this.button2);
+            this.credit.Controls.Add(this.label14);
+            this.credit.Controls.Add(this.textBox10);
+            this.credit.Controls.Add(this.label13);
+            this.credit.Controls.Add(this.textBox9);
+            this.credit.Controls.Add(this.label12);
+            this.credit.Controls.Add(this.textBox8);
+            this.credit.Controls.Add(this.label11);
+            this.credit.Controls.Add(this.textBox7);
+            this.credit.Controls.Add(this.label5);
+            this.credit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.credit.Location = new System.Drawing.Point(0, 0);
+            this.credit.Name = "credit";
+            this.credit.Size = new System.Drawing.Size(437, 887);
+            this.credit.TabIndex = 0;
             // 
             // label15
             // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(20, 273);
+            this.label15.Location = new System.Drawing.Point(33, 275);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(112, 19);
-            this.label15.TabIndex = 63;
+            this.label15.TabIndex = 75;
             this.label15.Text = "Price Details";
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button2.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(270, 462);
+            this.button2.Location = new System.Drawing.Point(117, 399);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 35);
-            this.button2.TabIndex = 62;
-            this.button2.Text = "Pay";
+            this.button2.Size = new System.Drawing.Size(283, 35);
+            this.button2.TabIndex = 74;
+            this.button2.Text = "Pay with Credit/Debit Card";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // label14
             // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(19, 201);
+            this.label14.Location = new System.Drawing.Point(32, 203);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(118, 19);
-            this.label14.TabIndex = 61;
+            this.label14.TabIndex = 73;
             this.label14.Text = "Name on card";
             // 
             // textBox10
             // 
+            this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox10.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(23, 227);
+            this.textBox10.Location = new System.Drawing.Point(36, 229);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(363, 27);
-            this.textBox10.TabIndex = 60;
+            this.textBox10.TabIndex = 72;
             // 
             // label13
             // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(209, 132);
+            this.label13.Location = new System.Drawing.Point(222, 134);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(45, 19);
-            this.label13.TabIndex = 59;
+            this.label13.TabIndex = 71;
             this.label13.Text = "CVV";
             // 
             // textBox9
             // 
+            this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox9.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(213, 158);
+            this.textBox9.Location = new System.Drawing.Point(226, 160);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(173, 27);
-            this.textBox9.TabIndex = 58;
+            this.textBox9.TabIndex = 70;
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(19, 132);
+            this.label12.Location = new System.Drawing.Point(32, 134);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(90, 19);
-            this.label12.TabIndex = 57;
+            this.label12.TabIndex = 69;
             this.label12.Text = "Valid until";
             // 
             // textBox8
             // 
+            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox8.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(23, 158);
+            this.textBox8.Location = new System.Drawing.Point(36, 160);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(173, 27);
-            this.textBox8.TabIndex = 56;
+            this.textBox8.TabIndex = 68;
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(21, 64);
+            this.label11.Location = new System.Drawing.Point(34, 66);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(113, 19);
-            this.label11.TabIndex = 55;
+            this.label11.TabIndex = 67;
             this.label11.Text = "Card number";
             // 
             // textBox7
             // 
+            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox7.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(25, 90);
+            this.textBox7.Location = new System.Drawing.Point(38, 92);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(362, 27);
-            this.textBox7.TabIndex = 54;
+            this.textBox7.TabIndex = 66;
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("SF Pro Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 10);
+            this.label5.Location = new System.Drawing.Point(33, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(152, 29);
-            this.label5.TabIndex = 53;
+            this.label5.TabIndex = 65;
             this.label5.Text = "Credit Card";
             // 
-            // panel4
+            // label16
             // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(135, 887);
-            this.panel4.TabIndex = 98;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("SF Pro Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label16.Location = new System.Drawing.Point(8, 42);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(118, 29);
+            this.label16.TabIndex = 77;
+            this.label16.Text = "Payment";
+            // 
+            // crebtn
+            // 
+            this.crebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.crebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crebtn.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crebtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.crebtn.Location = new System.Drawing.Point(0, 82);
+            this.crebtn.Name = "crebtn";
+            this.crebtn.Size = new System.Drawing.Size(135, 84);
+            this.crebtn.TabIndex = 80;
+            this.crebtn.Text = "Credit/Debit Card\r\n\r\nconvenience fee will be charged";
+            this.crebtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.crebtn.UseVisualStyleBackColor = false;
+            this.crebtn.Click += new System.EventHandler(this.crebtn_Click);
+            // 
+            // elebtn
+            // 
+            this.elebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.elebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.elebtn.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.elebtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.elebtn.Location = new System.Drawing.Point(0, 166);
+            this.elebtn.Name = "elebtn";
+            this.elebtn.Size = new System.Drawing.Size(135, 84);
+            this.elebtn.TabIndex = 81;
+            this.elebtn.Text = "7-Eleven\r\n\r\nconvenience fee will be charged";
+            this.elebtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.elebtn.UseVisualStyleBackColor = false;
+            this.elebtn.Click += new System.EventHandler(this.elebtn_Click);
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(316, 362);
+            this.label17.Name = "label17";
+            this.label17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label17.Size = new System.Drawing.Size(0, 16);
+            this.label17.TabIndex = 76;
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(34, 362);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(96, 19);
+            this.label18.TabIndex = 77;
+            this.label18.Text = "Total Price";
+            // 
+            // nameTic
+            // 
+            this.nameTic.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nameTic.AutoSize = true;
+            this.nameTic.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameTic.Location = new System.Drawing.Point(50, 300);
+            this.nameTic.Name = "nameTic";
+            this.nameTic.Size = new System.Drawing.Size(79, 16);
+            this.nameTic.TabIndex = 78;
+            this.nameTic.Text = "Total Price";
+            this.nameTic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(50, 335);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(118, 16);
+            this.label21.TabIndex = 79;
+            this.label21.Text = "Convenience fee";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // eleven
+            // 
+            this.eleven.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.eleven.Location = new System.Drawing.Point(0, 0);
+            this.eleven.Name = "eleven";
+            this.eleven.Size = new System.Drawing.Size(437, 887);
+            this.eleven.TabIndex = 80;
+            // 
+            // fee
+            // 
+            this.fee.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.fee.AutoSize = true;
+            this.fee.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fee.Location = new System.Drawing.Point(316, 335);
+            this.fee.Name = "fee";
+            this.fee.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fee.Size = new System.Drawing.Size(0, 16);
+            this.fee.TabIndex = 80;
+            this.fee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // money1
+            // 
+            this.money1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.money1.AutoSize = true;
+            this.money1.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.money1.Location = new System.Drawing.Point(316, 300);
+            this.money1.Name = "money1";
+            this.money1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.money1.Size = new System.Drawing.Size(0, 16);
+            this.money1.TabIndex = 81;
+            this.money1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // money2
+            // 
+            this.money2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.money2.AutoSize = true;
+            this.money2.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.money2.Location = new System.Drawing.Point(316, 316);
+            this.money2.Name = "money2";
+            this.money2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.money2.Size = new System.Drawing.Size(0, 16);
+            this.money2.TabIndex = 82;
+            this.money2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // nametic2
+            // 
+            this.nametic2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nametic2.AutoSize = true;
+            this.nametic2.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nametic2.Location = new System.Drawing.Point(50, 316);
+            this.nametic2.Name = "nametic2";
+            this.nametic2.Size = new System.Drawing.Size(79, 16);
+            this.nametic2.TabIndex = 83;
+            this.nametic2.Text = "Total Price";
+            this.nametic2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProjectDatabase.Properties.Resources.credit_card;
+            this.pictureBox1.Location = new System.Drawing.Point(48, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 82;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::ProjectDatabase.Properties.Resources.visa;
+            this.pictureBox3.Location = new System.Drawing.Point(316, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(56, 48);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 85;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::ProjectDatabase.Properties.Resources.sec;
+            this.pictureBox2.Location = new System.Drawing.Point(191, 7);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(122, 34);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 84;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::ProjectDatabase.Properties.Resources.mas;
+            this.pictureBox4.Location = new System.Drawing.Point(378, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(44, 48);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox4.TabIndex = 86;
+            this.pictureBox4.TabStop = false;
             // 
             // PaymentControl
             // 
@@ -674,9 +906,15 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.main.ResumeLayout(false);
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
+            this.credit.ResumeLayout(false);
+            this.credit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -722,9 +960,16 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel menu;
+        private System.Windows.Forms.Panel main;
+        private System.Windows.Forms.Panel credit;
+        private System.Windows.Forms.Button elebtn;
+        private System.Windows.Forms.Button crebtn;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label nameTic;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label14;
@@ -736,5 +981,14 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel eleven;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label money2;
+        private System.Windows.Forms.Label money1;
+        private System.Windows.Forms.Label fee;
+        private System.Windows.Forms.Label nametic2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
