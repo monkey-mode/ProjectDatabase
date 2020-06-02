@@ -155,8 +155,10 @@ namespace ProjectDatabase
                 comm.CommandText = "insert into ticket values(null," + cid + "," + bid2 + ")";
                 comm.ExecuteNonQuery();
             }
-            Main.Instance.Close();
-
+            Main.Instance.Pnl.Controls.RemoveByKey("BookingControl");
+            Main.Instance.Pnl.Controls.RemoveByKey("CustomerControl");
+            Main.Instance.Pnl.Controls.RemoveByKey("PaymentControl");
+            Main.Instance.BackBtn.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -199,7 +201,11 @@ namespace ProjectDatabase
                 comm.CommandText = "insert into ticket values(null," + cid + "," + bid2 + ")";
                 comm.ExecuteNonQuery();
             }
-            Main.Instance.Close();
+            
+            Main.Instance.Pnl.Controls.RemoveByKey("BookingControl");
+            Main.Instance.Pnl.Controls.RemoveByKey("CustomerControl");
+            Main.Instance.Pnl.Controls.RemoveByKey("PaymentControl");
+            Main.Instance.BackBtn.Visible = false;
         }
     }
 }
