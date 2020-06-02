@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
             this.numeric = new System.Windows.Forms.NumericUpDown();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.ConBtn = new System.Windows.Forms.Button();
@@ -45,11 +46,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.mail = new System.Windows.Forms.TextBox();
             this.Lname = new System.Windows.Forms.TextBox();
             this.Bnum = new System.Windows.Forms.ComboBox();
             this.Fname = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.mail = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +57,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.Controls.Add(this.mail);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.numeric);
             this.panel1.Controls.Add(this.comboBox1);
@@ -74,7 +75,6 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.mail);
             this.panel1.Controls.Add(this.Lname);
             this.panel1.Controls.Add(this.Bnum);
             this.panel1.Controls.Add(this.Fname);
@@ -82,6 +82,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 368);
             this.panel1.TabIndex = 0;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("SF Pro Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(482, 170);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(145, 18);
+            this.label15.TabIndex = 56;
+            this.label15.Text = "(use for username)";
             // 
             // numeric
             // 
@@ -93,23 +104,14 @@
             0});
             this.numeric.Location = new System.Drawing.Point(90, 196);
             this.numeric.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.numeric.Minimum = new decimal(new int[] {
-            900000000,
-            0,
+            1410065407,
+            2,
             0,
             0});
             this.numeric.Name = "numeric";
             this.numeric.Size = new System.Drawing.Size(268, 27);
             this.numeric.TabIndex = 51;
-            this.numeric.Value = new decimal(new int[] {
-            900000000,
-            0,
-            0,
-            0});
+            this.numeric.Tag = "";
             this.numeric.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // comboBox1
@@ -151,7 +153,7 @@
             // 
             // dob
             // 
-            this.dob.CustomFormat = "ddd / dd / MMM / yyyy";
+            this.dob.CustomFormat = "ddd / d / MMM / yyyy";
             this.dob.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dob.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dob.Location = new System.Drawing.Point(29, 307);
@@ -274,14 +276,6 @@
             this.label2.TabIndex = 36;
             this.label2.Text = "First / Given Name & Middle Name (if any)*";
             // 
-            // mail
-            // 
-            this.mail.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mail.Location = new System.Drawing.Point(424, 193);
-            this.mail.Name = "mail";
-            this.mail.Size = new System.Drawing.Size(330, 27);
-            this.mail.TabIndex = 35;
-            // 
             // Lname
             // 
             this.Lname.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -312,16 +306,14 @@
             this.Fname.Size = new System.Drawing.Size(265, 27);
             this.Fname.TabIndex = 31;
             // 
-            // label15
+            // mail
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("SF Pro Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(482, 170);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(145, 18);
-            this.label15.TabIndex = 56;
-            this.label15.Text = "(use for username)";
+            this.mail.AutoSize = true;
+            this.mail.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mail.Location = new System.Drawing.Point(420, 198);
+            this.mail.Name = "mail";
+            this.mail.Size = new System.Drawing.Size(0, 19);
+            this.mail.TabIndex = 57;
             // 
             // CustomerControl
             // 
@@ -356,12 +348,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox mail;
         private System.Windows.Forms.TextBox Lname;
         private System.Windows.Forms.ComboBox Bnum;
         private System.Windows.Forms.TextBox Fname;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.NumericUpDown numeric;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label mail;
     }
 }

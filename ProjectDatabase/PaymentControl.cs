@@ -22,12 +22,12 @@ namespace ProjectDatabase
         string cname;
         string cost;
         string[] pass = new string[2];
-        public PaymentControl(string sqlinsertcus, bool rcheck, string departinfo, string returninfo,string cname,string cost,string email,string mobilenum)
+        public PaymentControl(string sqlupdate, bool rcheck, string departinfo, string returninfo,string cname,string cost,string email,string password)
         {
             pass[0] = email;
-            pass[1] = mobilenum;
+            pass[1] = password;
             InitializeComponent();
-            this.sqlinsertcus = sqlinsertcus;
+            this.sqlinsertcus = sqlupdate;
             this.departinfo = departinfo.Split('|');
             if(rcheck)
                 this.returninfo = returninfo.Split('|');
@@ -155,10 +155,12 @@ namespace ProjectDatabase
                 comm.CommandText = "insert into ticket values(null," + cid + "," + bid2 + ")";
                 comm.ExecuteNonQuery();
             }
+            MessageBox.Show("Success");
             Main.Instance.Pnl.Controls.RemoveByKey("BookingControl");
             Main.Instance.Pnl.Controls.RemoveByKey("CustomerControl");
             Main.Instance.Pnl.Controls.RemoveByKey("PaymentControl");
             Main.Instance.BackBtn.Visible = false;
+            Main.Instance.ticBtn.Visible = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -201,11 +203,12 @@ namespace ProjectDatabase
                 comm.CommandText = "insert into ticket values(null," + cid + "," + bid2 + ")";
                 comm.ExecuteNonQuery();
             }
-            
+            MessageBox.Show("Success");
             Main.Instance.Pnl.Controls.RemoveByKey("BookingControl");
             Main.Instance.Pnl.Controls.RemoveByKey("CustomerControl");
             Main.Instance.Pnl.Controls.RemoveByKey("PaymentControl");
             Main.Instance.BackBtn.Visible = false;
+            Main.Instance.ticBtn.Visible = true;
         }
     }
 }

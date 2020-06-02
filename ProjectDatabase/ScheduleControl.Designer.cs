@@ -210,7 +210,7 @@
             // returnDate
             // 
             this.returnDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.returnDate.CustomFormat = "ddd / dd / MMM / yyyy";
+            this.returnDate.CustomFormat = "ddd / d / MMM / yyyy";
             this.returnDate.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.returnDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.returnDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -323,7 +323,7 @@
             // DepatureDate
             // 
             this.DepatureDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.DepatureDate.CustomFormat = "ddd / dd / MMM / yyyy";
+            this.DepatureDate.CustomFormat = "ddd / d / MMM / yyyy";
             this.DepatureDate.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DepatureDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DepatureDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;

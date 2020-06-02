@@ -32,12 +32,14 @@ namespace ProjectDatabase
             string mobileNumber = numeric.Value.ToString();
             string Email = mail.Text;
             string DOB = dob.Value.ToString("yyyy-MM-dd");
-            string sqlinsertcus = "insert into customer(cid,cname,cus_email,phone_number,dob) value(null,'"+comboBox1.Text+name+" "+lastname+"','"+Email+"','"+mobileNumber+"','"+DOB+"');";
+            string sqlupdate = "update customer "+
+                               "set cname = '"+ comboBox1.Text + name + " " + lastname + "', phone_number = "+ mobileNumber + ", dob = '"+DOB+"' " +
+                               "where cus_email = '"+Email+"' and pass = "+Main.Instance.password+"; ";
             if (name != "" && lastname != "" && Email != "")
             {
                 if (!Main.Instance.Pnl.Controls.ContainsKey("PaymentControl"))
                 {
-                    PaymentControl pay = new PaymentControl(sqlinsertcus, rcheck, bids1, bids2, comboBox1.Text + name + " " + lastname,cost,Email,mobileNumber);
+                    PaymentControl pay = new PaymentControl(sqlupdate, rcheck, bids1, bids2, comboBox1.Text + name + " " + lastname,cost,Email,mobileNumber);
                     pay.Dock = DockStyle.Fill;
                     Main.Instance.Pnl.Controls.Add(pay);
                 }
@@ -68,7 +70,7 @@ namespace ProjectDatabase
         {
             comboBox1.SelectedIndex = 0;
             Bnum.SelectedIndex = 0;
-
+            mail.Text = Main.Instance.User.Text;
             
         }
     }

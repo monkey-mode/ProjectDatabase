@@ -41,15 +41,24 @@ namespace ProjectDatabase
                 rid = 2;
             string DDate = DepatureDate.Value.ToString("yyyy-MM-dd");
             string RDate = returnDate.Value.ToString("yyyy-MM-dd");
-
-            if (!Main.Instance.Pnl.Controls.ContainsKey("BookingControl"))
+            string check = Main.Instance.User.Text;
+            if (!check.Equals(""))
             {
-                BookingControl bk = new BookingControl(fromBox.Text,toBox.Text,cost.ToString(),rid,DDate,RDate,returnCheck.Checked,seatCombo.Text);
-                bk.Dock = DockStyle.Fill;
-                Main.Instance.Pnl.Controls.Add(bk);
-            } 
-            Main.Instance.Pnl.Controls["BookingControl"].BringToFront();
-            Main.Instance.BackBtn.Visible = true;
+                if (!Main.Instance.Pnl.Controls.ContainsKey("BookingControl"))
+                {
+                    BookingControl bk = new BookingControl(fromBox.Text, toBox.Text, cost.ToString(), rid, DDate, RDate, returnCheck.Checked, seatCombo.Text);
+                    bk.Dock = DockStyle.Fill;
+                    Main.Instance.Pnl.Controls.Add(bk);
+                }
+                Main.Instance.Pnl.Controls["BookingControl"].BringToFront();
+                Main.Instance.BackBtn.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Please Login");
+            }
+
+            
         }
         private void checkReturn(object sender, EventArgs e)
         {

@@ -14,7 +14,7 @@ namespace ProjectDatabase
     public partial class Main : Form
     {
         static Main obj;
-
+        string pass;
         public static Main Instance
         {
             get
@@ -26,7 +26,16 @@ namespace ProjectDatabase
                 return obj;
             }
         }
-
+        public string password
+        {
+            get { return pass; }
+            set { pass = value; }
+        }
+        public Label User
+        {
+            get { return username; }
+            set { username = value; }
+        }
         public Panel Pnl
         {
             get { return mainPanel; }
@@ -38,6 +47,21 @@ namespace ProjectDatabase
             set { Back = value; }
         }
 
+        public Button ticBtn
+        {
+            get { return ticket; }
+            set { ticket = value; }
+        }
+        public Button LoginButton
+        {
+            get { return login; }
+            set { login = value; }
+        }
+        public Button LogoutButton
+        {
+            get { return logout; }
+            set { logout = value; }
+        }
         public Main()
         {
             InitializeComponent();
@@ -45,6 +69,8 @@ namespace ProjectDatabase
 
         private void Main_Load(object sender, EventArgs e)
         {
+            logout.Visible = false;
+            ticket.Visible = false;
             Back.Visible = false;
             obj = this;
             ScheduleControl sch = new ScheduleControl();
@@ -76,6 +102,32 @@ namespace ProjectDatabase
                 Back.Visible = true;
             }
 
+        }
+
+        private void ticket_Click(object sender, EventArgs e)
+        {
+            Login f1 = new Login();
+            f1.Show();
+
+        }
+
+        private void login_Click(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            log.Show();
+        }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            login.Visible = true;
+            logout.Visible = false;
+            username.Text = "";
+            ticBtn.Visible = false;
+
+            Main.Instance.Pnl.Controls.RemoveByKey("BookingControl");
+            Main.Instance.Pnl.Controls.RemoveByKey("CustomerControl");
+            Main.Instance.Pnl.Controls.RemoveByKey("PaymentControl");
+            Main.Instance.BackBtn.Visible = false;
         }
     }
 }
