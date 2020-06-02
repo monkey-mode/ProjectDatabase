@@ -210,14 +210,13 @@
             // returnDate
             // 
             this.returnDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.returnDate.CustomFormat = "ddd    dd    MMM    yyyy";
+            this.returnDate.CustomFormat = "ddd / dd / MMM / yyyy";
             this.returnDate.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.returnDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.returnDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.returnDate.Location = new System.Drawing.Point(351, 168);
             this.returnDate.Name = "returnDate";
-            this.returnDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.returnDate.RightToLeftLayout = true;
+            this.returnDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.returnDate.Size = new System.Drawing.Size(245, 27);
             this.returnDate.TabIndex = 46;
             this.returnDate.Visible = false;
@@ -280,9 +279,9 @@
             this.seatCombo.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seatCombo.FormattingEnabled = true;
             this.seatCombo.Items.AddRange(new object[] {
+            "Economy class",
             "Business class",
-            "First class",
-            "Economy class"});
+            "First class"});
             this.seatCombo.Location = new System.Drawing.Point(647, 83);
             this.seatCombo.Name = "seatCombo";
             this.seatCombo.Size = new System.Drawing.Size(318, 27);
@@ -324,14 +323,12 @@
             // DepatureDate
             // 
             this.DepatureDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.DepatureDate.CustomFormat = "ddd    dd    MMM    yyyy";
+            this.DepatureDate.CustomFormat = "ddd / dd / MMM / yyyy";
             this.DepatureDate.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DepatureDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DepatureDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.DepatureDate.Location = new System.Drawing.Point(23, 171);
             this.DepatureDate.Name = "DepatureDate";
-            this.DepatureDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.DepatureDate.RightToLeftLayout = true;
             this.DepatureDate.Size = new System.Drawing.Size(245, 27);
             this.DepatureDate.TabIndex = 32;
             // 

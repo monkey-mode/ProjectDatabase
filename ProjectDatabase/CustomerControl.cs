@@ -12,25 +12,59 @@ namespace ProjectDatabase
 {
     public partial class CustomerControl : UserControl
     {
-        public CustomerControl()
+        bool rcheck;
+        string bids1;
+        string bids2;
+        public CustomerControl(bool rcheck,string bids1,string bids2)
         {
             InitializeComponent();
+            this.rcheck = rcheck;
+            this.bids1 = bids1;
+            this.bids2 = bids2;
         }
 
         private void ConBtn_Click(object sender, EventArgs e)
         {
-            if (!Main.Instance.Pnl.Controls.ContainsKey("PaymentControl"))
+            string name = Fname.Text;
+            string lastname = Lname.Text;
+            string mobileNumber = numeric.Value.ToString();
+            string Email = mail.Text;
+            string DOB = dob.Value.ToString("yyyy-MM-dd");
+            string sqlinsertcus = "insert into customer(cname,cus_email,phone_number,dob) value('"+comboBox1.Text+name+" "+lastname+"','"+Email+"','"+mobileNumber+"','"+DOB+"');";
+            if (name != "" || lastname != "" || Email != "")
             {
-                PaymentControl pay = new PaymentControl();
-                pay.Dock = DockStyle.Fill;
-                Main.Instance.Pnl.Controls.Add(pay);
+                if (!Main.Instance.Pnl.Controls.ContainsKey("PaymentControl"))
+                {
+                    PaymentControl pay = new PaymentControl(sqlinsertcus, rcheck, bids1, bids2, comboBox1.Text + name + " " + lastname);
+                    pay.Dock = DockStyle.Fill;
+                    Main.Instance.Pnl.Controls.Add(pay);
+                }
+                Main.Instance.Pnl.Controls["PaymentControl"].BringToFront();
+                Main.Instance.BackBtn.Visible = true;
             }
-            Main.Instance.Pnl.Controls["PaymentControl"].BringToFront();
-            Main.Instance.BackBtn.Visible = true;
+            else
+            {
+                MessageBox.Show("Please Input Details");
+            }
+            
         }
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
 
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
         private void CustomerControl_Load(object sender, EventArgs e)
         {
+            comboBox1.SelectedIndex = 0;
             Bnum.SelectedIndex = 0;
         }
     }
