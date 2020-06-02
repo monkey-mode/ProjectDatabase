@@ -21,8 +21,11 @@ namespace ProjectDatabase
         string[] returninfo;
         string cname;
         string cost;
-        public PaymentControl(string sqlinsertcus, bool rcheck, string departinfo, string returninfo,string cname,string cost)
+        string[] pass = new string[2];
+        public PaymentControl(string sqlinsertcus, bool rcheck, string departinfo, string returninfo,string cname,string cost,string email,string mobilenum)
         {
+            pass[0] = email;
+            pass[1] = mobilenum;
             InitializeComponent();
             this.sqlinsertcus = sqlinsertcus;
             this.departinfo = departinfo.Split('|');
@@ -121,8 +124,82 @@ namespace ProjectDatabase
             comm.ExecuteNonQuery();
 
             comm = con.CreateCommand();
-            comm.CommandText = "insert into check_in values()";
+            comm.CommandText = "insert into check_in values(null,'7-Eleven','Please Scan Barcode And Pay','Pending',"+ departinfo[0] +")";
             comm.ExecuteNonQuery();
+            if (rcheck)
+            {
+                comm = con.CreateCommand();
+                comm.CommandText = "insert into check_in values(null,'7-Eleven','Please Scan Barcode And Pay','Pending'," + returninfo[0] + ")";
+                comm.ExecuteNonQuery();
+            }
+
+            string sql = "select cid from customer where cus_email = '" + pass[0] + "' and phone_number = " + pass[1] + ";";
+            comm = new MySqlCommand(sql, con);
+            var cid = comm.ExecuteScalar();
+
+            string sql2 = "select check_id from check_in where bid =" + departinfo[0] + ";";
+            comm = new MySqlCommand(sql2, con);
+            var bid = comm.ExecuteScalar();
+
+            comm = con.CreateCommand();
+            comm.CommandText = "insert into ticket values(null," + cid + "," + bid + ")";
+            comm.ExecuteNonQuery();
+
+            if (rcheck)
+            {
+                string sql3 = "select check_id from check_in where bid =" + returninfo[0] + ";";
+                comm = new MySqlCommand(sql3, con);
+                var bid2 = comm.ExecuteScalar();
+
+                comm = con.CreateCommand();
+                comm.CommandText = "insert into ticket values(null," + cid + "," + bid2 + ")";
+                comm.ExecuteNonQuery();
+            }
+            Main.Instance.Close();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string card = cardNum.Text + "|" + valid.Text + "|" + cvv.Text + "|" + nameOn.Text;
+            comm = con.CreateCommand();
+            comm.CommandText = sqlinsertcus;
+            comm.ExecuteNonQuery();
+
+            comm = con.CreateCommand();
+            comm.CommandText = "insert into check_in values(null,'Credit Card','"+card+"','Pending'," + departinfo[0] + ")";
+            comm.ExecuteNonQuery();
+
+            if (rcheck)
+            {
+                comm = con.CreateCommand();
+                comm.CommandText = "insert into check_in values(null,'Credit Card','" + card + "','Pending'," + returninfo[0] + ")";
+                comm.ExecuteNonQuery();
+
+            }
+            string sql = "select cid from customer where cus_email = '"+pass[0]+"' and phone_number = "+pass[1]+";";
+            comm = new MySqlCommand(sql, con);
+            var cid = comm.ExecuteScalar();
+
+            string sql2 = "select check_id from check_in where bid =" +departinfo[0] +";";
+            comm = new MySqlCommand(sql2, con);
+            var bid = comm.ExecuteScalar();
+
+            comm = con.CreateCommand();
+            comm.CommandText = "insert into ticket values(null," + cid + "," + bid + ")";
+            comm.ExecuteNonQuery();
+
+            if (rcheck)
+            {
+                string sql3 = "select check_id from check_in where bid =" + returninfo[0] + ";";
+                comm = new MySqlCommand(sql3, con);
+                var bid2 = comm.ExecuteScalar();
+
+                comm = con.CreateCommand();
+                comm.CommandText = "insert into ticket values(null," + cid + "," + bid2 + ")";
+                comm.ExecuteNonQuery();
+            }
+            Main.Instance.Close();
         }
     }
 }

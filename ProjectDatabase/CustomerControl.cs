@@ -37,7 +37,7 @@ namespace ProjectDatabase
             {
                 if (!Main.Instance.Pnl.Controls.ContainsKey("PaymentControl"))
                 {
-                    PaymentControl pay = new PaymentControl(sqlinsertcus, rcheck, bids1, bids2, comboBox1.Text + name + " " + lastname,cost);
+                    PaymentControl pay = new PaymentControl(sqlinsertcus, rcheck, bids1, bids2, comboBox1.Text + name + " " + lastname,cost,Email,mobileNumber);
                     pay.Dock = DockStyle.Fill;
                     Main.Instance.Pnl.Controls.Add(pay);
                 }
@@ -68,6 +68,7 @@ namespace ProjectDatabase
         {
             comboBox1.SelectedIndex = 0;
             Bnum.SelectedIndex = 0;
+
             
         }
     }

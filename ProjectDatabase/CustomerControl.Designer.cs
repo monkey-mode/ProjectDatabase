@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.numeric = new System.Windows.Forms.NumericUpDown();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.ConBtn = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.dob = new System.Windows.Forms.DateTimePicker();
@@ -47,8 +49,7 @@
             this.Lname = new System.Windows.Forms.TextBox();
             this.Bnum = new System.Windows.Forms.ComboBox();
             this.Fname = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numeric = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +57,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.numeric);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.ConBtn);
@@ -78,15 +80,57 @@
             this.panel1.Controls.Add(this.Fname);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(776, 388);
+            this.panel1.Size = new System.Drawing.Size(776, 368);
             this.panel1.TabIndex = 0;
+            // 
+            // numeric
+            // 
+            this.numeric.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numeric.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.numeric.Location = new System.Drawing.Point(90, 196);
+            this.numeric.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.numeric.Minimum = new decimal(new int[] {
+            900000000,
+            0,
+            0,
+            0});
+            this.numeric.Name = "numeric";
+            this.numeric.Size = new System.Drawing.Size(268, 27);
+            this.numeric.TabIndex = 51;
+            this.numeric.Value = new decimal(new int[] {
+            900000000,
+            0,
+            0,
+            0});
+            this.numeric.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Mr.",
+            "Ms.",
+            "Mrs."});
+            this.comboBox1.Location = new System.Drawing.Point(28, 98);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(59, 27);
+            this.comboBox1.TabIndex = 50;
             // 
             // ConBtn
             // 
             this.ConBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.ConBtn.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ConBtn.Location = new System.Drawing.Point(572, 321);
+            this.ConBtn.Location = new System.Drawing.Point(619, 299);
             this.ConBtn.Name = "ConBtn";
             this.ConBtn.Size = new System.Drawing.Size(134, 35);
             this.ConBtn.TabIndex = 49;
@@ -196,9 +240,9 @@
             this.label6.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(420, 169);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 19);
+            this.label6.Size = new System.Drawing.Size(65, 19);
             this.label6.TabIndex = 39;
-            this.label6.Text = "Email*";
+            this.label6.Text = "Email* ";
             // 
             // label5
             // 
@@ -268,47 +312,16 @@
             this.Fname.Size = new System.Drawing.Size(265, 27);
             this.Fname.TabIndex = 31;
             // 
-            // comboBox1
+            // label15
             // 
-            this.comboBox1.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Mr.",
-            "Ms.",
-            "Mrs."});
-            this.comboBox1.Location = new System.Drawing.Point(28, 98);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(59, 27);
-            this.comboBox1.TabIndex = 50;
-            // 
-            // numeric
-            // 
-            this.numeric.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numeric.Increment = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.numeric.Location = new System.Drawing.Point(90, 196);
-            this.numeric.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.numeric.Minimum = new decimal(new int[] {
-            900000000,
-            0,
-            0,
-            0});
-            this.numeric.Name = "numeric";
-            this.numeric.Size = new System.Drawing.Size(268, 27);
-            this.numeric.TabIndex = 51;
-            this.numeric.Value = new decimal(new int[] {
-            900000000,
-            0,
-            0,
-            0});
-            this.numeric.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("SF Pro Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(482, 170);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(145, 18);
+            this.label15.TabIndex = 56;
+            this.label15.Text = "(use for username)";
             // 
             // CustomerControl
             // 
@@ -317,7 +330,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.panel1);
             this.Name = "CustomerControl";
-            this.Size = new System.Drawing.Size(776, 388);
+            this.Size = new System.Drawing.Size(776, 368);
             this.Load += new System.EventHandler(this.CustomerControl_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -349,5 +362,6 @@
         private System.Windows.Forms.TextBox Fname;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.NumericUpDown numeric;
+        private System.Windows.Forms.Label label15;
     }
 }

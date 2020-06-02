@@ -42,15 +42,6 @@ namespace ProjectDatabase
             string DDate = DepatureDate.Value.ToString("yyyy-MM-dd");
             string RDate = returnDate.Value.ToString("yyyy-MM-dd");
 
-            /*comm = con.CreateCommand();
-            comm.CommandText = "INSERT INTO projectdatabase.booking (bid, bdate, seat_id, airplane_id, sid) VALUES (@bid, @bdate,@seat_id,@airplane_id,@sid);";
-            comm.Parameters.AddWithValue("@bid",null);
-            comm.Parameters.AddWithValue("@bdate", DateTime.Now.ToString("yyyy-MM-dd  HH-mm-ss"));
-            comm.Parameters.AddWithValue("@seat_id", num);
-            comm.Parameters.AddWithValue("@airplane_id",1);
-            comm.Parameters.AddWithValue("@sid", 1);
-            comm.ExecuteNonQuery();*/
-
             if (!Main.Instance.Pnl.Controls.ContainsKey("BookingControl"))
             {
                 BookingControl bk = new BookingControl(fromBox.Text,toBox.Text,cost.ToString(),rid,DDate,RDate,returnCheck.Checked,seatCombo.Text);
