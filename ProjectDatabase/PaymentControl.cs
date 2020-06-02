@@ -35,17 +35,24 @@ namespace ProjectDatabase
         }
         private void PaymentControl_Load(object sender, EventArgs e)
         {
+            open_connection();
             int sum = int.Parse(cost);
             nametic2.Visible = false;
+            nametic72.Visible = false;
             money1.Text = "THB  " + cost;
+            money71.Text = "THB  " + cost;
             if (rcheck)
             {
                 nametic2.Visible = true;
+                nametic72.Visible = true;
                 money2.Text = "THB  " + cost;
+                money72.Text = "THB  " + cost;
                 sum += int.Parse(cost);
             }
             fee.Text = "THB  " + sum * 0.01;
+            fee2.Text = "THB  " + sum * 0.01;
             label17.Text = "THB  " + (sum + sum * 0.01);
+            total7.Text = "THB  " + (sum + sum * 0.01);
             credit.BringToFront();
             crebtn.BackColor = Color.White;
             crebtn.ForeColor = Color.Black;
@@ -75,9 +82,11 @@ namespace ProjectDatabase
 
             }
             nameTic.Text = acom1.Text;
+            nametic71.Text = acom1.Text;
             if (rcheck)
             {
                 nametic2.Text = acom2.Text;
+                nametic72.Text = acom2.Text;
             }
         }
 
@@ -99,6 +108,21 @@ namespace ProjectDatabase
 
             crebtn.BackColor = Color.FromArgb(255, 128, 0);
             crebtn.ForeColor = Color.White;
+        }
+        private void open_connection()
+        {
+            con.Open();
+            //MessageBox.Show($"MySQL version : {con.ServerVersion}");
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            comm = con.CreateCommand();
+            comm.CommandText = sqlinsertcus;
+            comm.ExecuteNonQuery();
+
+            comm = con.CreateCommand();
+            comm.CommandText = "insert into check_in values()";
+            comm.ExecuteNonQuery();
         }
     }
 }

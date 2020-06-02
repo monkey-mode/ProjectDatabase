@@ -32,8 +32,8 @@ namespace ProjectDatabase
             string mobileNumber = numeric.Value.ToString();
             string Email = mail.Text;
             string DOB = dob.Value.ToString("yyyy-MM-dd");
-            string sqlinsertcus = "insert into customer(cname,cus_email,phone_number,dob) value('"+comboBox1.Text+name+" "+lastname+"','"+Email+"','"+mobileNumber+"','"+DOB+"');";
-            if (name != "" || lastname != "" || Email != "")
+            string sqlinsertcus = "insert into customer(cid,cname,cus_email,phone_number,dob) value(null,'"+comboBox1.Text+name+" "+lastname+"','"+Email+"','"+mobileNumber+"','"+DOB+"');";
+            if (name != "" && lastname != "" && Email != "")
             {
                 if (!Main.Instance.Pnl.Controls.ContainsKey("PaymentControl"))
                 {

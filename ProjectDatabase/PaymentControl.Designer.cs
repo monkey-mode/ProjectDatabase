@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentControl));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -93,19 +94,36 @@
             this.money1 = new System.Windows.Forms.Label();
             this.money2 = new System.Windows.Forms.Label();
             this.nametic2 = new System.Windows.Forms.Label();
+            this.checkType2 = new System.Windows.Forms.Label();
+            this.nametic72 = new System.Windows.Forms.Label();
+            this.money72 = new System.Windows.Forms.Label();
+            this.money71 = new System.Windows.Forms.Label();
+            this.fee2 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.nametic71 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.total7 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label40 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.main.SuspendLayout();
             this.menu.SuspendLayout();
             this.credit.SuspendLayout();
+            this.eleven.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -543,8 +561,8 @@
             // main
             // 
             this.main.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.main.Controls.Add(this.credit);
             this.main.Controls.Add(this.eleven);
+            this.main.Controls.Add(this.credit);
             this.main.Location = new System.Drawing.Point(132, 3);
             this.main.Name = "main";
             this.main.Size = new System.Drawing.Size(437, 887);
@@ -798,6 +816,20 @@
             // 
             // eleven
             // 
+            this.eleven.Controls.Add(this.pictureBox6);
+            this.eleven.Controls.Add(this.label40);
+            this.eleven.Controls.Add(this.nametic72);
+            this.eleven.Controls.Add(this.money72);
+            this.eleven.Controls.Add(this.money71);
+            this.eleven.Controls.Add(this.fee2);
+            this.eleven.Controls.Add(this.label35);
+            this.eleven.Controls.Add(this.nametic71);
+            this.eleven.Controls.Add(this.label37);
+            this.eleven.Controls.Add(this.total7);
+            this.eleven.Controls.Add(this.label39);
+            this.eleven.Controls.Add(this.button1);
+            this.eleven.Controls.Add(this.pictureBox5);
+            this.eleven.Controls.Add(this.checkType2);
             this.eleven.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eleven.Location = new System.Drawing.Point(0, 0);
             this.eleven.Name = "eleven";
@@ -852,6 +884,149 @@
             this.nametic2.Text = "Total Price";
             this.nametic2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // checkType2
+            // 
+            this.checkType2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.checkType2.AutoSize = true;
+            this.checkType2.Font = new System.Drawing.Font("SF Pro Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkType2.Location = new System.Drawing.Point(30, 25);
+            this.checkType2.Name = "checkType2";
+            this.checkType2.Size = new System.Drawing.Size(118, 29);
+            this.checkType2.TabIndex = 87;
+            this.checkType2.Text = "7-Eleven";
+            // 
+            // nametic72
+            // 
+            this.nametic72.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nametic72.AutoSize = true;
+            this.nametic72.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nametic72.Location = new System.Drawing.Point(52, 458);
+            this.nametic72.Name = "nametic72";
+            this.nametic72.Size = new System.Drawing.Size(79, 16);
+            this.nametic72.TabIndex = 100;
+            this.nametic72.Text = "Total Price";
+            this.nametic72.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // money72
+            // 
+            this.money72.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.money72.AutoSize = true;
+            this.money72.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.money72.Location = new System.Drawing.Point(318, 458);
+            this.money72.Name = "money72";
+            this.money72.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.money72.Size = new System.Drawing.Size(0, 16);
+            this.money72.TabIndex = 99;
+            this.money72.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // money71
+            // 
+            this.money71.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.money71.AutoSize = true;
+            this.money71.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.money71.Location = new System.Drawing.Point(318, 442);
+            this.money71.Name = "money71";
+            this.money71.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.money71.Size = new System.Drawing.Size(0, 16);
+            this.money71.TabIndex = 98;
+            this.money71.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // fee2
+            // 
+            this.fee2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.fee2.AutoSize = true;
+            this.fee2.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fee2.Location = new System.Drawing.Point(318, 477);
+            this.fee2.Name = "fee2";
+            this.fee2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fee2.Size = new System.Drawing.Size(0, 16);
+            this.fee2.TabIndex = 97;
+            this.fee2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label35
+            // 
+            this.label35.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(52, 477);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(118, 16);
+            this.label35.TabIndex = 96;
+            this.label35.Text = "Convenience fee";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // nametic71
+            // 
+            this.nametic71.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nametic71.AutoSize = true;
+            this.nametic71.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nametic71.Location = new System.Drawing.Point(52, 442);
+            this.nametic71.Name = "nametic71";
+            this.nametic71.Size = new System.Drawing.Size(79, 16);
+            this.nametic71.TabIndex = 95;
+            this.nametic71.Text = "Total Price";
+            this.nametic71.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label37
+            // 
+            this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(36, 504);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(96, 19);
+            this.label37.TabIndex = 94;
+            this.label37.Text = "Total Price";
+            // 
+            // total7
+            // 
+            this.total7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.total7.AutoSize = true;
+            this.total7.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.total7.Location = new System.Drawing.Point(318, 504);
+            this.total7.Name = "total7";
+            this.total7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.total7.Size = new System.Drawing.Size(0, 16);
+            this.total7.TabIndex = 93;
+            this.total7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label39
+            // 
+            this.label39.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(35, 417);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(112, 19);
+            this.label39.TabIndex = 92;
+            this.label39.Text = "Price Details";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button1.Font = new System.Drawing.Font("SF Pro Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(226, 541);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(176, 35);
+            this.button1.TabIndex = 91;
+            this.button1.Text = "Pay with 7-Eleven";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label40
+            // 
+            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("SF Pro Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(32, 97);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(389, 160);
+            this.label40.TabIndex = 101;
+            this.label40.Text = resources.GetString("label40.Text");
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProjectDatabase.Properties.Resources.credit_card;
@@ -861,6 +1036,36 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 82;
             this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::ProjectDatabase.Properties.Resources.barcode;
+            this.pictureBox6.Location = new System.Drawing.Point(98, 281);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(246, 100);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox6.TabIndex = 102;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::ProjectDatabase.Properties.Resources._7;
+            this.pictureBox5.Location = new System.Drawing.Point(352, 12);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(50, 52);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 90;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::ProjectDatabase.Properties.Resources.mas;
+            this.pictureBox4.Location = new System.Drawing.Point(378, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(44, 48);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox4.TabIndex = 86;
+            this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -882,16 +1087,6 @@
             this.pictureBox2.TabIndex = 84;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::ProjectDatabase.Properties.Resources.mas;
-            this.pictureBox4.Location = new System.Drawing.Point(378, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(44, 48);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox4.TabIndex = 86;
-            this.pictureBox4.TabStop = false;
-            // 
             // PaymentControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -911,10 +1106,14 @@
             this.menu.PerformLayout();
             this.credit.ResumeLayout(false);
             this.credit.PerformLayout();
+            this.eleven.ResumeLayout(false);
+            this.eleven.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -990,5 +1189,19 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label checkType2;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label nametic72;
+        private System.Windows.Forms.Label money72;
+        private System.Windows.Forms.Label money71;
+        private System.Windows.Forms.Label fee2;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label nametic71;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label total7;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Button button1;
     }
 }
