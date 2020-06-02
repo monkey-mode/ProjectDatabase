@@ -121,38 +121,38 @@ namespace ProjectDatabase
         {
             comm = con.CreateCommand();
             comm.CommandText = sqlinsertcus;
-            comm.ExecuteNonQuery();
+            comm.ExecuteNonQuery();                                         //update customer from CustomerControl
 
             comm = con.CreateCommand();
-            comm.CommandText = "insert into check_in values(null,'7-Eleven','Please Scan Barcode And Pay','Pending',"+ departinfo[0] +")";
+            comm.CommandText = "insert into check_in values(null,'7-Eleven','Please Scan Barcode And Pay','Pending',"+ departinfo[0] +")";                          //insert booking1
             comm.ExecuteNonQuery();
             if (rcheck)
             {
                 comm = con.CreateCommand();
-                comm.CommandText = "insert into check_in values(null,'7-Eleven','Please Scan Barcode And Pay','Pending'," + returninfo[0] + ")";
+                comm.CommandText = "insert into check_in values(null,'7-Eleven','Please Scan Barcode And Pay','Pending'," + returninfo[0] + ")";                    //insert booking2 if checked
                 comm.ExecuteNonQuery();
             }
 
-            string sql = "select cid from customer where cus_email = '" + pass[0] + "' and phone_number = " + pass[1] + ";";
+            string sql = "select cid from customer where cus_email = '" + pass[0] + "' and pass = " + pass[1] + ";";                                        //find and get cus id by email and password 1*
             comm = new MySqlCommand(sql, con);
             var cid = comm.ExecuteScalar();
 
-            string sql2 = "select check_id from check_in where bid =" + departinfo[0] + ";";
+            string sql2 = "select check_id from check_in where bid =" + departinfo[0] + ";";                                                                //find booking1 id 2*
             comm = new MySqlCommand(sql2, con);
             var bid = comm.ExecuteScalar();
 
             comm = con.CreateCommand();
-            comm.CommandText = "insert into ticket values(null," + cid + "," + bid + ")";
+            comm.CommandText = "insert into ticket values(null," + cid + "," + bid + ")";                                                                   //insert ticket from 1* 2*
             comm.ExecuteNonQuery();
 
             if (rcheck)
             {
-                string sql3 = "select check_id from check_in where bid =" + returninfo[0] + ";";
+                string sql3 = "select check_id from check_in where bid =" + returninfo[0] + ";";                                                            //find booking 2 if checked
                 comm = new MySqlCommand(sql3, con);
                 var bid2 = comm.ExecuteScalar();
 
                 comm = con.CreateCommand();
-                comm.CommandText = "insert into ticket values(null," + cid + "," + bid2 + ")";
+                comm.CommandText = "insert into ticket values(null," + cid + "," + bid2 + ")";                                                              //insert ticket 2
                 comm.ExecuteNonQuery();
             }
             MessageBox.Show("Success");
@@ -181,7 +181,7 @@ namespace ProjectDatabase
                 comm.ExecuteNonQuery();
 
             }
-            string sql = "select cid from customer where cus_email = '"+pass[0]+"' and phone_number = "+pass[1]+";";
+            string sql = "select cid from customer where cus_email = '"+pass[0]+"' and pass= "+pass[1]+";";
             comm = new MySqlCommand(sql, con);
             var cid = comm.ExecuteScalar();
 
@@ -192,6 +192,8 @@ namespace ProjectDatabase
             comm = con.CreateCommand();
             comm.CommandText = "insert into ticket values(null," + cid + "," + bid + ")";
             comm.ExecuteNonQuery();
+
+
 
             if (rcheck)
             {

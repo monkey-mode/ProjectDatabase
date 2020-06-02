@@ -35,11 +35,13 @@ namespace ProjectDatabase
             string sqlupdate = "update customer "+
                                "set cname = '"+ comboBox1.Text + name + " " + lastname + "', phone_number = "+ mobileNumber + ", dob = '"+DOB+"' " +
                                "where cus_email = '"+Email+"' and pass = "+Main.Instance.password+"; ";
+
+
             if (name != "" && lastname != "" && Email != "")
             {
                 if (!Main.Instance.Pnl.Controls.ContainsKey("PaymentControl"))
                 {
-                    PaymentControl pay = new PaymentControl(sqlupdate, rcheck, bids1, bids2, comboBox1.Text + name + " " + lastname,cost,Email,mobileNumber);
+                    PaymentControl pay = new PaymentControl(sqlupdate, rcheck, bids1, bids2, comboBox1.Text + name + " " + lastname,cost,Email,Main.Instance.password);
                     pay.Dock = DockStyle.Fill;
                     Main.Instance.Pnl.Controls.Add(pay);
                 }
@@ -68,6 +70,7 @@ namespace ProjectDatabase
         }
         private void CustomerControl_Load(object sender, EventArgs e)
         {
+            dob.Value = DateTime.Now;
             comboBox1.SelectedIndex = 0;
             Bnum.SelectedIndex = 0;
             mail.Text = Main.Instance.User.Text;

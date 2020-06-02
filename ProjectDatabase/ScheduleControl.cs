@@ -32,6 +32,7 @@ namespace ProjectDatabase
             comm = new MySqlCommand(sql, con);
             var cost = comm.ExecuteScalar();
             var sel = fromBox.SelectedIndex.ToString() + toBox.SelectedIndex.ToString();
+
             var rid = 0;
             if (sel == "01")
             {
